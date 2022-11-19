@@ -9,6 +9,10 @@
 import UIKit
 
 open class TabBarPagerController : UIViewController, UIScrollViewDelegate {
+    
+    ///  controller's view safeAreaLayoutGuide.topAnchor to bottomAnchor
+    public var bottomViewFrameLayoutGuide: UILayoutGuide!
+    
     private var containerScrollView: UIScrollView! //contains headerVC + bottomVC
     private var overlayScrollView: UIScrollView! //handles whole scroll logic
     private var panViews: [Int: UIView] = [:] {// bottom view(s)/scrollView(s)
@@ -54,6 +58,10 @@ open class TabBarPagerController : UIViewController, UIScrollViewDelegate {
     }
     
     open override func loadView() {
+        // add bottom view layout guide
+        bottomViewFrameLayoutGuide = UILayoutGuide()
+        bottomViewFrameLayoutGuide.identifier = "ignore the safe top area"
+        
         ///add container scroll view and put headerVC and  bottomPagerVC inside. content size will be superview height + header height.
         containerScrollView = UIScrollView()
         containerScrollView.scrollsToTop = false
@@ -66,6 +74,7 @@ open class TabBarPagerController : UIViewController, UIScrollViewDelegate {
 
         ///wrap all in a UIView
         let view = UIView()
+        view.addLayoutGuide(bottomViewFrameLayoutGuide)
         view.addSubview(overlayScrollView)
         view.addSubview(containerScrollView)
         self.view = view
@@ -74,6 +83,13 @@ open class TabBarPagerController : UIViewController, UIScrollViewDelegate {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+        /// Configure bottom controller‘s frame
+        NSLayoutConstraint.activate([
+            bottomViewFrameLayoutGuide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            bottomViewFrameLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            bottomViewFrameLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bottomViewFrameLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
 
         ///Configure overlay scroll
         overlayScrollView.delegate = self
@@ -106,9 +122,7 @@ open class TabBarPagerController : UIViewController, UIScrollViewDelegate {
         bottomView.constraint(to: containerScrollView, attribute: .bottom, secondAttribute: .bottom)
         bottomView.constraint(to: headerView, attribute: .top, secondAttribute: .bottom)
         bottomView.constraint(to: containerScrollView, attribute: .width, secondAttribute: .width)
-        bottomView.constraint(to: containerScrollView,
-                              attribute: .height,
-                              secondAttribute: .height)
+        bottomView.heightAnchor.constraint(equalTo: bottomViewFrameLayoutGuide.heightAnchor).isActive = true
         
         ///let know others scroll view configuration is done
         delegate?.tabBarPagerController(self, didScroll: overlayScrollView)
@@ -132,7 +146,8 @@ open class TabBarPagerController : UIViewController, UIScrollViewDelegate {
     }
     
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let obj = object as? UIScrollView, keyPath == #keyPath(UIScrollView.contentSize) {
+        if let obj = object as? UIScrollView,
+            keyPath == #keyPath(UIScrollView.contentSize) {
             if let scroll = self.panViews[currentIndex] as? UIScrollView, obj == scroll {
                 updateOverlayScrollContentSize(with: scroll)
             }
