@@ -1,0 +1,16 @@
+use_frameworks!
+
+platform :ios, '13.0'
+
+target 'TabBarPager_Example' do
+  pod 'TabBarPager', :path => '../'
+  pod 'Tabman'
+  pod 'Pageboy'
+  pod 'MJRefresh'
+
+  target 'TabBarPager_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

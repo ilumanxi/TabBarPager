@@ -1,0 +1,32 @@
+PODS:
+  - MJRefresh (3.7.5)
+  - Pageboy (4.0.2)
+  - TabBarPager (0.1.0)
+  - Tabman (3.0.1):
+    - Pageboy (~> 4.0.2)
+
+DEPENDENCIES:
+  - MJRefresh
+  - Pageboy
+  - TabBarPager (from `../`)
+  - Tabman
+
+SPEC REPOS:
+  trunk:
+    - MJRefresh
+    - Pageboy
+    - Tabman
+
+EXTERNAL SOURCES:
+  TabBarPager:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  Pageboy: 34ff11e8d1041b81769d5bcde9b19a0cb7218bd9
+  TabBarPager: bb4b427df82fa5ab714cb815820bdb15a03936ec
+  Tabman: a5880789298f81d3f2cdd6510b54ae637cfd8e09
+
+PODFILE CHECKSUM: 23258d3cb1422fb4404785bb90b0060025476926
+
+COCOAPODS: 1.11.3
