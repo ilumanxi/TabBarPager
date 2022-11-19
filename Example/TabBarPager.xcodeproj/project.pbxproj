@@ -13,6 +13,11 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		A94B3EE82928B49900A915C0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B3EE72928B49900A915C0 /* TableViewController.swift */; };
+		A97B84F8292894C3000887B4 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97B84F7292894C3000887B4 /* HeaderViewController.swift */; };
+		A97B84FC29289720000887B4 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97B84F929289720000887B4 /* ChildViewController.swift */; };
+		A97B84FD29289720000887B4 /* ButtonBarExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97B84FA29289720000887B4 /* ButtonBarExampleViewController.swift */; };
+		A97B84FE29289720000887B4 /* TabItemBarExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97B84FB29289720000887B4 /* TabItemBarExampleViewController.swift */; };
 		B01B5689E070AAD07609BA15 /* Pods_TabBarPager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A9EC188329F1B726B04B57 /* Pods_TabBarPager_Tests.framework */; };
 		FBB29E644400E693804A8DE5 /* Pods_TabBarPager_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3894095C4E14402FF473F341 /* Pods_TabBarPager_Example.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +49,11 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		89A9EC188329F1B726B04B57 /* Pods_TabBarPager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabBarPager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		997C7ED514AA154E77C57F1B /* Pods-TabBarPager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabBarPager_Example.release.xcconfig"; path = "Target Support Files/Pods-TabBarPager_Example/Pods-TabBarPager_Example.release.xcconfig"; sourceTree = "<group>"; };
+		A94B3EE72928B49900A915C0 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A97B84F7292894C3000887B4 /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
+		A97B84F929289720000887B4 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		A97B84FA29289720000887B4 /* ButtonBarExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBarExampleViewController.swift; sourceTree = "<group>"; };
+		A97B84FB29289720000887B4 /* TabItemBarExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemBarExampleViewController.swift; sourceTree = "<group>"; };
 		B328B633C8280B5B9E806E07 /* TabBarPager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TabBarPager.podspec; path = ../TabBarPager.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C6D05C465F33D80D1D4E8C84 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E361FE6325E24A000E4F6ABA /* Pods-TabBarPager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabBarPager_Tests.release.xcconfig"; path = "Target Support Files/Pods-TabBarPager_Tests/Pods-TabBarPager_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +105,11 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				A97B84F7292894C3000887B4 /* HeaderViewController.swift */,
+				A97B84FA29289720000887B4 /* ButtonBarExampleViewController.swift */,
+				A97B84F929289720000887B4 /* ChildViewController.swift */,
+				A94B3EE72928B49900A915C0 /* TableViewController.swift */,
+				A97B84FB29289720000887B4 /* TabItemBarExampleViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -316,6 +331,7 @@
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
 				"${BUILT_PRODUCTS_DIR}/TabBarPager/TabBarPager.framework",
 				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -323,6 +339,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TabBarPager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -336,8 +353,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A97B84FE29289720000887B4 /* TabItemBarExampleViewController.swift in Sources */,
+				A94B3EE82928B49900A915C0 /* TableViewController.swift in Sources */,
+				A97B84FD29289720000887B4 /* ButtonBarExampleViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				A97B84F8292894C3000887B4 /* HeaderViewController.swift in Sources */,
+				A97B84FC29289720000887B4 /* ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

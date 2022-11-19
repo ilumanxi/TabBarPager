@@ -4,6 +4,7 @@ platform :ios, '13.0'
 
 target 'TabBarPager_Example' do
   pod 'TabBarPager', :path => '../'
+  pod 'XLPagerTabStrip', '~> 9.0'
   pod 'Tabman'
   pod 'Pageboy'
   pod 'MJRefresh'

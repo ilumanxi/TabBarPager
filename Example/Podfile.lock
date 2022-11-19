@@ -4,18 +4,21 @@ PODS:
   - TabBarPager (0.1.0)
   - Tabman (3.0.1):
     - Pageboy (~> 4.0.2)
+  - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
   - MJRefresh
   - Pageboy
   - TabBarPager (from `../`)
   - Tabman
+  - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   trunk:
     - MJRefresh
     - Pageboy
     - Tabman
+    - XLPagerTabStrip
 
 EXTERNAL SOURCES:
   TabBarPager:
@@ -26,7 +29,8 @@ SPEC CHECKSUMS:
   Pageboy: 34ff11e8d1041b81769d5bcde9b19a0cb7218bd9
   TabBarPager: bb4b427df82fa5ab714cb815820bdb15a03936ec
   Tabman: a5880789298f81d3f2cdd6510b54ae637cfd8e09
+  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 23258d3cb1422fb4404785bb90b0060025476926
+PODFILE CHECKSUM: 1611571377428ddda71f056c088b54906aef8354
 
 COCOAPODS: 1.11.3
